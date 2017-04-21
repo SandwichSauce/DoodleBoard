@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -29,15 +30,15 @@ public class MainActivity extends Activity implements OnClickListener {
     private Paint paint;
     private float downX;
     private float downY;
-    private TextView txt;
+    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        txt = (TextView) findViewById(R.id.txt);
+        editText = (EditText) findViewById(R.id.etxt);
         // 为文本框注册上下文菜单
-        registerForContextMenu(txt);
+        registerForContextMenu(editText);
         initView();
     }
     private void initView() {
@@ -142,15 +143,20 @@ public class MainActivity extends Activity implements OnClickListener {
         {
             case R.id.red:
                 mi.setChecked(true);
-                txt.setBackgroundColor(Color.RED);
+                editText.setTextColor(Color.RED);
+//                canvas.drawColor(Color.RED);
+//                paint.setColor(Color.RED);
+
                 break;
             case R.id.green:
                 mi.setChecked(true);
-                txt.setBackgroundColor(Color.GREEN);
+                editText.setTextColor(Color.GREEN);
+//                paint.setColor(Color.GREEN);
+
                 break;
             case R.id.blue:
                 mi.setChecked(true);
-                txt.setBackgroundColor(Color.BLUE);
+                editText.setTextColor(Color.BLUE);
                 break;
         }
         return true;
@@ -168,37 +174,37 @@ public class MainActivity extends Activity implements OnClickListener {
         switch (mi.getItemId())
         {
             case R.id.font_10:
-                txt.setTextSize(10 * 2);
+                editText.setTextSize(10 * 2);
                 break;
             case R.id.font_12:
-                txt.setTextSize(12 * 2);
+                editText.setTextSize(12 * 2);
                 break;
             case R.id.font_14:
-                txt.setTextSize(14 * 2);
+                editText.setTextSize(14 * 2);
                 break;
             case R.id.font_16:
-                txt.setTextSize(16 * 2);
+                editText.setTextSize(16 * 2);
                 break;
             case R.id.font_18:
-                txt.setTextSize(18 * 2);
+                editText.setTextSize(18 * 2);
                 break;
             case R.id.red_font:
-                txt.setTextColor(Color.RED);
+                editText.setTextColor(Color.RED);
                 mi.setChecked(true);
                 break;
             case R.id.green_font:
-                txt.setTextColor(Color.GREEN);
+                editText.setTextColor(Color.GREEN);
                 mi.setChecked(true);
                 break;
             case R.id.blue_font:
-                txt.setTextColor(Color.BLUE);
+                editText.setTextColor(Color.BLUE);
                 mi.setChecked(true);
                 break;
-            case R.id.plain_item:
-                Toast toast = Toast.makeText(MainActivity.this
-                        , "您单击了普通菜单项" , Toast.LENGTH_SHORT);
-                toast.show();
-                break;
+//            case R.id.plain_item:
+//                Toast toast = Toast.makeText(MainActivity.this
+//                        , "您单击了普通菜单项" , Toast.LENGTH_SHORT);
+//                toast.show();
+//                break;
         }
         return true;
     }

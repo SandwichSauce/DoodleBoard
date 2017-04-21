@@ -4,18 +4,19 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
+    <EditText
 
-        android:id="@+id/txt"
+        android:id="@+id/etxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15pt"
-        android:text="可通过上下文菜单修改背景色"
+        android:text="为你的涂鸦起个名"
         />
 <ImageView
     android:id="@+id/image"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"/>
+    android:layout_height="fill_parent"
+    android:layout_below="@+id/etxt" />
 
     <LinearLayout
         android:layout_width="match_parent"
