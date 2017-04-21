@@ -70,7 +70,8 @@ public class MainActivity extends Activity implements OnClickListener {
         }
         private void initPanel() {
             if(panel == null){
-                panel = Bitmap.createBitmap(image.getWidth(), image.getHeight(), Config.ARGB_8888);//画纸
+                //画纸
+                panel = Bitmap.createBitmap(image.getWidth(), image.getHeight(), Config.ARGB_8888);
                 //初始化一个画板
                 canvas = new Canvas(panel);
                 //初始化画笔
@@ -90,11 +91,11 @@ public class MainActivity extends Activity implements OnClickListener {
         int id = view.getId();
         System.out.println("id"+id);
         if(id == R.id.save){
+            //保存
             System.out.println("保存...");
-        //保存
         }else if(id == R.id.reset){
             //清空
-            System.out.println("取消...");
+            System.out.println("清空...");
             canvas.drawColor(Color.YELLOW);
             image.setImageBitmap(panel);
         }
